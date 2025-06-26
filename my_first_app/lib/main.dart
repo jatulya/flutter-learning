@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_first_app/bloc/login_bloc.dart';
-import 'package:my_first_app/cubit/login_cubit.dart';
 import 'package:my_first_app/loggedin.dart';
 import 'package:my_first_app/login.dart';
 
@@ -14,15 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => LoginBloc(),
-      child : MaterialApp(
+    return MaterialApp(
         home : LoginForm(),
         title: 'Login PAge Demo',
         routes: {
           '/logged-in' : (context) => LoggedInPage()
         },
-      )
-    ); 
+      ); 
   }
 }
