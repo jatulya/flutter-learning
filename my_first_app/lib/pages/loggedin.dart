@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/login.dart';
+import 'package:my_first_app/pages/login.dart';
 
 class LoggedInPage extends StatelessWidget {
   final String? email;
@@ -33,7 +33,7 @@ class LoggedInPage extends StatelessWidget {
 
               GestureDetector(
                 onTap : () => {
-                  Navigator.pop(context)
+                  Navigator.pushNamed(context, '/movie-page')
                 },
                 child : Icon(Icons.arrow_back)
               )
