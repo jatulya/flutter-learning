@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginForm> {
           listenWhen: (prev, curr) =>
               prev.enabled != curr.enabled && curr.enabled,
           listener: (context, state) {},
-          buildWhen: (prev, curr) => prev.enabled != curr.enabled,
+          // buildWhen: (prev, curr) => prev.enabled != curr.enabled,
           builder: (context, state) {
             return SizedBox(
               height: 1000,
@@ -150,6 +150,7 @@ class _LoginPageState extends State<LoginForm> {
                       ),
                       onPressed: () {
                         if (state.email != 'atulya@gmail.com') {
+                    
                           Fluttertoast.showToast(
                             msg: "Wrong credentials. Type again",
                             toastLength: Toast.LENGTH_SHORT,

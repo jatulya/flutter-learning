@@ -112,6 +112,24 @@ ListView.builder
     commonly used
 
 
+API integration
+---------------
+Install get_it, flutter_dotenv and  dio dependencies
+Create a model for movie class. --> models are used to define the types of the data received and used everywhere.
+    We have used factory constructor inside it so that parsing is easier.
+Create movie service file in service folder and do api call using dio there. 
+    we call the required API through dio. Any exception related to api calls are only handled here.
+    The data received is passed to factory constructor and turned to the format we need.
+repository
+    we create functions to access the repositories and its functions
+cubit
+    states are created in movie_state
+    the cubit calls repository with its function and handles the responses
+    locator is used for easy injections to the dependencies
+ui
+    movie page passes the arguement to the function specified in Cubit where cubit is called via get_It
+
+
 Note
 ----
 1. Every widget (even a text) should have some height related to it. Either with itself or with its parent component. The height Usually helps to place the content in the correct position. If height not given, it might lead to infinte frame.
