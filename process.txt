@@ -1,0 +1,127 @@
+1. Setting up the application.
+    1.1 Ctrl+Shift+P -> flutter projectflu
+
+for flutter app to run, we need a virtual device. 
+for this, we go to android studio app -> device manager ...z -> create virtual device .. 
+there might be steps in between, in the end, u get a list of device names that pertains to different mobile views. Usually pixel 7 is chosen.
+After new device is added, run it just to see how it looks.
+
+In VS Code, go to lib/main.dart
+this is the file that is used for running the app. Below, choose Target Device as the one you created in Android Studio (close and open the vs code after we create the virtual device. Note : Might take time to run the app.)
+We have three flavours in flutter --> dev, stage and prod. When running app, the app has been configured to run with which flavour. Every component is same for all the flavours, except the endpoints and others. 
+
+Some file details
+-----------------
+pubspec.yaml 
+    --> the specifications and details of the app (including dependencies version)
+analysis_options.yaml 
+    --> this file specifies how strictly flutter should review/check the code.
+main.dart 
+    --> the build and the run of the app starts from here. Different components imported here. Basically, the equivalent of main.tsx in react
+
+Some terms
+-----------
+visit this chatgpt chat for more info --> https://chatgpt.com/c/685a435c-c740-800f-bc69-8146d186368c
+
+Widgets
+    It describes the configuration for an [Element].
+    A widget is an immutable description of part of a user interface. Widgets can be inflated into elements, which manage the underlying render tree.
+    A given widget can be included in the tree zero or more times. 
+    The [key] property controls how one widget replaces another widget in the tree. If the [runtimeType] and [key] properties of the two widgets are same then the new widget replaces the old widget by updating the underlying element  Otherwise, the old element is removed from the tree, the new widget is inflated into an element, and the new element is inserted into the tree.
+
+context
+    context is like a map of the widget’s position — and it's needed to access things above it in the tree.
+    BuildContext is an object that Flutter uses to locate widgets in the widget tree during build and runtime.
+    It allows a widget to:
+        Talk to its parent or ancestors
+        Access shared data (like themes, media size, routes, providers, blocs)
+        Trigger navigation, show dialogs, snackbars, etc.
+
+Hot reload
+    The changes in the app are done without reloading the whole page (type r in the command line)
+    The values of the state would remain unchanged  
+
+Stateless Widgets
+Stateful Widgets
+Bloc
+
+listenWhen
+    don't respond to every state change - only respond when a specific change or condition is true,
+    Listener always checks if prev state and current state meet the specified condition, but the function specified is run only when the condition is true
+    eg: body: BlocListener<LoginBloc, LoginState>(
+        listenWhen: (prev, curr) => prev.enabled != curr.enabled && curr.enabled,..)
+        enabled is a boolean state that turns true if both the password and email is of length 6. 
+        Without listenWhen, your listener would run every time any character is typed, even if nothing important happened. With listenWhen, you avoid spammy side effects (like snackbars firing repeatedly).
+
+buildwhen
+    buildWhen tells the BlocBuilder:
+    “Only rebuild the widget when this specific condition is true.”
+    eg. buildWhen: (prev, curr) => prev.isValid != curr.isValid,    
+        This means:
+        The login button (inside BlocBuilder) will only rebuild if the isValid value changes (e.g. from false → true or true → false).
+        If the user types more into email or password but isValid stays the same, the widget doesn't rebuild.
+
+Cubit  
+
+
+Code details
+-----------
+import 'package:flutter/material.dart';
+    Flutter widgets implementing Material Design.
+    docs.flutter.dev/ui/widgets/material for a catalog of commonly-used Material component widgets
+
+void main() {
+  runApp(const MyApp());
+}
+    Calling the App for running. MyApp is the main App component. MyApp name can be changed. This is mainly used to set routes (maybe, my assumption), set color themes and other settings required for all the components
+
+setState((){
+    counter++;
+})
+    This call to setState tells the Flutter framework that something has changed in this State which causes it to rerun the build method below so that the display can reflect the updated values. If we changed _counter without calling setState(), then the build method would not be called again, and so nothing would appear to happen.
+    the widget build in the same class as the function called with the setState function is rerun everytime setState is called
+
+home : MyHomePage
+    this sets the home widget - the starting point of the app (landing page)
+
+_Name 
+    this kind of naming for any thing in the code is taken as private items (cannot be accessed by any other class and files)
+
+body: BlocListener<LoginBloc, LoginState>(
+        listenWhen: (prev, curr) => prev.enabled != curr.enabled && curr.enabled,
+        ..)
+    
+
+Layouts
+-------
+Scaffold 
+    gives a basic material design for the app Layout - appbar, body, floatingactionbutton
+
+Column 
+    scrolling has to be manually given
+
+ListView    
+    automatic scrolling
+    displays a list of widgets in column format 
+    the UI of the whole list is generated together --> can slow down or crash the application if the list is large
+    used for small and static lists
+    "onstructing the List requires doing work for every child that could possibly be displayed in the list view instead of just those children that are actually visible"
+
+ListView.builder
+    same as ListView but generates UI batch by batch (includes no.of elements that can be displayed on the screen) the rest of the batches are generated accordingly after scrolling
+    commonly used
+
+
+Note
+----
+1. Every widget (even a text) should have some height related to it. Either with itself or with its parent component. The height Usually helps to place the content in the correct position. If height not given, it might lead to infinte frame.
+
+2. The listview can break the app if no height is given to the parent container. This is because the listview is automatically scrollable, so if no height is mentioned, it assumes infinite scrolling which can break the app.
+
+3. If the crossaxisalignment in column is not set, it by default set the elements in the centre of the row.
+
+4. Add an image
+    in the pubspec.yaml, add assets : at the end with proper indentation and add the files or the directory name where the images are stored.
+    use Image(image: AssetImage('images/todo_image.jpg')) to load the image.
+
+5. The exclaimation mark ! is used to force the dart to think the returning element as not null. Use it only when you are sure the value won't be null
