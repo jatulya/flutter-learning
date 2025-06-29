@@ -5,7 +5,6 @@ import 'package:my_first_app/models.dart';
 import 'package:my_first_app/repositories/movie_repositories.dart';
 
 
-
 class MovieCubit extends Cubit<MovieState> {
   final MovieRepository repository;
 

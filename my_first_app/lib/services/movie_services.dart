@@ -12,7 +12,7 @@ class MovieService {
       'http://www.omdbapi.com/',
       queryParameters: {
         't': title,
-        'apikey': '',
+        'apikey': 'd3e1282b',
       },
     );
 

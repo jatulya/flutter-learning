@@ -143,3 +143,20 @@ Note
     use Image(image: AssetImage('images/todo_image.jpg')) to load the image.
 
 5. The exclaimation mark ! is used to force the dart to think the returning element as not null. Use it only when you are sure the value won't be null
+
+6. Place breakpoints after variable assignments.
+
+7.get it always returns the instanes of the dependencies being called. So cant't use them in Bloc consumers or providers being the bloc needs the type, not the instance
+
+
+
+
+Errors encountered
+------------------
+
+The error you're seeing:
+
+evaluateInFrame: (113) Expression compilation error
+Error: The getter 'response' isn't defined for the class 'MovieService'.
+
+happens because you're typing response in the Debug Console, but response is a local variable inside the fetchMovieByTitle method. In Dart, local variables inside functions aren't directly accessible from outside the function's scope, including the debug console unless you're paused at a line inside that function and the variable is already in scope.
