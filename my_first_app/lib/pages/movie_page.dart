@@ -1,42 +1,32 @@
 // movie_page.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_first_app/cubit/movie/movie_cubit.dart';
-import 'package:my_first_app/cubit/movie/movie_locator.dart';
-import 'package:my_first_app/cubit/movie/movie_state.dart';
+import 'package:my_first_app/components/custom_title.dart';
+import 'package:my_first_app/components/movie_widget.dart';
+import 'package:my_first_app/components/seat_counter.dart';
+
 
 class MoviePage extends StatelessWidget {
   const MoviePage({super.key});
 
+  static const itemsList = [
+      CustomTitle(title: 'Select the Seats'),
+      MovieWidget(), 
+      SeatCounter()  
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<MovieCubit>()..loadMovie("Guardians OF the GALaxy"),
-      child: Scaffold(
-        appBar: AppBar(title: Text('Movie Search')),
-        body: BlocBuilder<MovieCubit, MovieState>(
-          builder: (context, state) {
-            if (state.loading) {
-              return Center(child: CircularProgressIndicator());
-            }
-            if (state.error != null) {
-              return Center(child: Text(state.error!));
-            }
-            if (state.movie == null) {
-              return Center(child: Text('No movie found'));
-            }
-
-            final movie = state.movie!;
-            return ListTile(
-              leading: Image.network(
-                movie.posterPath,
-                errorBuilder: (context, _, __) => Icon(Icons.movie),
-              ),
-              title: Text(movie.title),
-            );
-          },
-        ),
-      ),
-    );
+   return Scaffold(
+    backgroundColor: Colors.grey[850],
+   body:  Container(
+    height: 1500,
+    padding: EdgeInsets.all(10),
+    child: ListView.separated(
+      itemBuilder: (context, index) => itemsList[index], 
+      separatorBuilder: (context, index) => const SizedBox(height: 10,), 
+      itemCount: itemsList.length),
+   )
+   );
   }
 }
+
