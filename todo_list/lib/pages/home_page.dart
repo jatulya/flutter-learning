@@ -1,47 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/components/footer.dart';
+import 'package:todo_list/components/header.dart';
+import 'package:todo_list/components/subheading.dart';
+import 'package:todo_list/components/task_row.dart';
 
-class Homepage extends StatelessWidget{
-  const Homepage ({super.key});
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
+
+  static const _listItems = [CustomHeader(), Subheading(), TaskRow()];
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child : Container(
-        padding: EdgeInsets.all(20),
-        child : Row (
-          children: [
-            Container ( 
-              decoration: BoxDecoration(
-                color: Colors.blueGrey[100],
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-              ),
-              height: 35,
-              width: 35,
-              child : Icon(
-                Icons.menu, 
-                color: Colors.blueGrey[300],),
-            ),
-            SizedBox(width: 96,),
+    return Scaffold(
+      backgroundColor: Colors.blueGrey[50],
 
-            Text('Homepage'),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, '/create-task'),
+        backgroundColor: Colors.blue,
+        elevation: 6,
+        shape: const CircleBorder(),
+        child: const Icon(Icons.add, color: Colors.white, size: 30),
+        // <-- Forces perfect circular shape
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
-            SizedBox(width: 96,),
-            Container ( 
-              decoration: BoxDecoration(
-                color: Colors.blueGrey[100],
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-              ),
-              height: 35,
-              width: 35,
-              child : Icon(
-                Icons.notifications, 
-                color: Colors.blueGrey[300],),
-            ),
+      // Footer (bottom nav bar)
+      bottomNavigationBar: const Footer(),
 
-            
-
-          ],)
-      )
-    );    
+      // Main content
+      body: Padding(
+        padding: const EdgeInsets.all(30),
+        child: ListView.separated(
+          itemBuilder: (context, index) => Center(child: _listItems[index]),
+          separatorBuilder: (context, index) => const SizedBox(height: 30),
+          itemCount: _listItems.length,
+        ),
+      ),
+    );
   }
 }
