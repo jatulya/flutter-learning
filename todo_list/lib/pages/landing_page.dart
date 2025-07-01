@@ -36,7 +36,7 @@ class LandingPage extends StatelessWidget {
                 Text(
                   'A workspace to over 10 Million influencers around the globe.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey[350], fontSize: 12),
+                  style: TextStyle(color: Colors.grey[400], fontSize: 18),
                 ),
 
                 SizedBox(height: 100),
