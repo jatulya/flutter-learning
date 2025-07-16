@@ -1,11 +1,19 @@
+import 'package:injectable/injectable.dart';
+import 'package:my_first_app/models.dart';
 import 'package:my_first_app/services/movie_services.dart';
-import '../models.dart';
 
+abstract class IMovieRepository {
+  Future<Movie> getMovieByTitle(String title);
+}
 
-class MovieRepository {
-  final MovieService service;
+@Injectable(as: IMovieRepository)
+class MovieRepository implements IMovieRepository {
+  final MovieService service ;
   MovieRepository(this.service);
 
-  Future<Movie> getMovieByTitle(String title) =>
-      service.fetchMovieByTitle(title);
+  @override
+   Future<Movie> getMovieByTitle(String title) async {
+    return await service.fetchMovieByTitle(title);
+   
+  }
 }
