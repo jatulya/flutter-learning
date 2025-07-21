@@ -10,13 +10,14 @@ class MovieService {
   MovieService();   // 👉 inject Dio instead of creating it
 
   final Dio _dio = getIt<Dio>();
+  final String apiKey = dotenv.get('OMDP_API_KEY');
 
   /// Returns a parsed `Movie` or throws an [Exception].
   Future<Movie> fetchMovieByTitle(String title) async {
   
       final response = await _dio.get(
         'http://www.omdbapi.com/',
-        queryParameters: {'t': title, 'apikey': 'd3e1282b'},
+        queryParameters: {'t': title, 'apikey': apiKey},
       );
 
       final data =  response.data as Map<String, dynamic>;
