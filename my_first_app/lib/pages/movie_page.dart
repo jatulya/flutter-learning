@@ -1,8 +1,8 @@
 // movie_page.dart
 import 'package:flutter/material.dart';
-import 'package:my_first_app/components/custom_title.dart';
-import 'package:my_first_app/components/movie_widget.dart';
-import 'package:my_first_app/components/seat_counter.dart';
+import 'package:my_first_app/common/custom_title.dart';
+import 'package:my_first_app/common/movie_widget.dart';
+import 'package:my_first_app/common/seat_counter.dart';
 
 
 class MoviePage extends StatelessWidget {
