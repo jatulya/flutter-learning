@@ -14,6 +14,5 @@ class MovieRepository implements IMovieRepository {
   @override
    Future<Movie> getMovieByTitle(String title) async {
     return await service.fetchMovieByTitle(title);
-   
   }
 }

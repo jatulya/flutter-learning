@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:my_first_app/common/widgets/max_seats.dart';
 import 'package:my_first_app/cubit/movie/injectable.dart';
+import 'package:my_first_app/cubit/movie/injectable.dart';
 
-import 'package:my_first_app/cubit/movie/movie_locator.dart';
 import 'package:my_first_app/pages/loggedin.dart';
 import 'package:my_first_app/pages/login.dart';
 import 'package:my_first_app/pages/movie_page.dart';
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: navigatorKey,
+     
       home: LoginForm(),
       title: 'Login PAge Demo',
       routes: {

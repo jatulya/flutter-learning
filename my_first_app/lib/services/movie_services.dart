@@ -1,4 +1,3 @@
-// movie_service.dart
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
@@ -21,13 +20,12 @@ class MovieService {
       );
 
       final data =  response.data as Map<String, dynamic>;
-      print("Log from myself : Services : $data");
+
 
       if (data['Response'] == 'False') {
         throw Exception(data['Error']);
       }
 
-      print("Log from myself : Services : Movie after truncate : ${Movie.fromJson(data).genre}");
       return Movie.fromJson(data);
     
   }

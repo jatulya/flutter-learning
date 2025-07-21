@@ -10,7 +10,7 @@ class MovieWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(     
+    return BlocProvider(
       create: (_) => MovieCubit()..loadMovie("Guardians of the GalaxY"),
       child: Container(
         height: 638,
