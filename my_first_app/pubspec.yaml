@@ -46,6 +46,7 @@ dependencies:
   sentry_flutter: ^9.4.1
   injectable_generator: ^2.7.0
   injectable: ^2.5.0
+  event_bus: ^2.0.1
 
 dev_dependencies:
   flutter_test:
