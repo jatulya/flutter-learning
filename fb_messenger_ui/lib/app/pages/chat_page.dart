@@ -1,3 +1,4 @@
+import 'package:fb_messenger_ui/app/common/widgets/chat_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -6,9 +7,7 @@ class ChatPage extends StatelessWidget {
   @override 
   Widget build(BuildContext context){
     return Scaffold(
-      appBar : AppBar(
-        title : Text("Hello"),
-      )
+      appBar :  ChatAppBar(),
     );
   }
 }
