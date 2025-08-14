@@ -22,7 +22,8 @@ class AppColors {
   static const Color greyText = Color(0xFF9E9E9E);         // light grey text
 
   // Off-white
-  static const Color offWhite = Color(0xFFFAFAFA);         // subtle off-white
+  static const Color offWhite = Color(0xFFFAFAFA);
+  static const Color white = Color(0xFFFFFFFF);
 
   // Other grey variants if needed
   static const Color grey100 = Color(0xFFF5F5F5);
