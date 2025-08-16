@@ -18,11 +18,12 @@ class AppColors {
   static const Color black80 = Color(0xCC1E1F1C);          // 80% opacity
   static const Color black60 = Color(0x991E1F1C);          // 60% opacity
   static const Color greyShadow = Color(0x33000000);       // 20% black for shadow
-  static const Color greyBackground = Color(0xFFF1F3F4);   // search bar bg
+  static const Color greyBackground = Color.fromARGB(255, 228, 234, 233);   // search bar bg
   static const Color greyText = Color(0xFF9E9E9E);         // light grey text
 
   // Off-white
-  static const Color offWhite = Color(0xFFFAFAFA);         // subtle off-white
+  static const Color offWhite = Color(0xFFFAFAFA);
+  static const Color white = Color(0xFFFFFFFF);
 
   // Other grey variants if needed
   static const Color grey100 = Color(0xFFF5F5F5);
