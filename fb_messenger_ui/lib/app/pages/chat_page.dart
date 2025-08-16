@@ -1,3 +1,4 @@
+import 'package:fb_messenger_ui/app/components/stories.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -6,9 +7,11 @@ class ChatPage extends StatelessWidget {
   @override 
   Widget build(BuildContext context){
     return Scaffold(
-      appBar : AppBar(
-        title : Text("Hello"),
-      )
+      body: Column(
+        children: [
+          Stories(),
+        ],
+      ),
     );
   }
 }
