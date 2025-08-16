@@ -10,7 +10,12 @@ class Stories extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 12),
+        margin: const EdgeInsets.fromLTRB(
+        20,
+        15,
+        20,
+        0,
+      ), 
         height: 110, // fixed height for avatars + text
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
