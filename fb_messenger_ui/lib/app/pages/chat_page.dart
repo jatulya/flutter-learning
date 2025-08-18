@@ -1,5 +1,6 @@
 import 'package:fb_messenger_ui/app/common/widgets/chat_app_bar.dart';
 import 'package:fb_messenger_ui/app/common/widgets/search_bar_widget.dart';
+import 'package:fb_messenger_ui/app/components/stories.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -13,7 +14,8 @@ class ChatPage extends StatelessWidget {
       body: Column(
         children: [
           SearchBarWidget(controller: _searchController),
-        ]
+          Stories(),
+        ],
       ),
     );
   }
