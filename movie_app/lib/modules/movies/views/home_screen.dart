@@ -15,11 +15,6 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         children: const [
           MovieCard(
-            title: "Inception",
-            year: "2010",
-            posterUrl: "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
-          ),
-          MovieCard(
             title: "Interstellar",
             year: "2014",
             posterUrl: "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
