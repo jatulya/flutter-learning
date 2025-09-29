@@ -9,31 +9,53 @@ class Countdown extends StatefulWidget {
 }
 
 class _CountdownState extends State<Countdown> {
-  static const int totalSeconds = 10; // ⏱ total countdown time
+  static const int totalSeconds = 10; //  total countdown time
   int remainingSeconds = totalSeconds;
+  bool isPaused = false;
   Timer? timer;
 
-  void startTimer() {
+  void setTimer() {
     setState(() {
       remainingSeconds = totalSeconds;
+      isPaused = false;
     });
+  }
 
+  void cancelTimer() {
     timer?.cancel();
+    if (!isPaused) {
+      setState(() {
+        remainingSeconds = totalSeconds;
+      });
+    }
+  }
+
+  void pauseTimer() {
+    setState(() {
+      isPaused = true;
+    });
+  }
+
+  void resumeTimer() {
+    setState(() {
+      isPaused = false;
+    });
+    startTimer();
+  }
+
+  void startTimer() async {
     timer = Timer.periodic(const Duration(seconds: 1), (t) {
       if (!mounted) {
         t.cancel();
         return;
       }
 
-      if (remainingSeconds > 0) {
+      if (!isPaused && remainingSeconds > 0) {
         setState(() {
           remainingSeconds--;
         });
-      } else {
-        t.cancel();
-        setState((){
-          remainingSeconds = totalSeconds;
-        })
+      } else if (remainingSeconds == 0) {
+        cancelTimer();
       }
     });
   }
@@ -64,11 +86,7 @@ class _CountdownState extends State<Countdown> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _buildTimerWidget(context),
-          Row(
-            children : [
-              _buildStartButton(),
-            ],
-          )
+          Row(children: [_buildButtons()]),
         ],
       ),
     );
@@ -103,15 +121,52 @@ class _CountdownState extends State<Countdown> {
     );
   }
 
-  Widget _buildStartButton() {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        textStyle: const TextStyle(fontSize: 20),
-      ),
-      onPressed: () => startTimer(),
-      child: const Text("Start"),
-    );
+  Widget _buildButtons() {
+    final bool isIdle = remainingSeconds == totalSeconds;
+
+    if (isIdle) {
+      // 👉 Only show Start button
+      return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          textStyle: const TextStyle(fontSize: 20),
+        ),
+        onPressed: startTimer,
+        child: const Text("Start"),
+      );
+    } else {
+      // 👉 Show Pause/Resume + Cancel buttons
+      return Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: isPaused ? resumeTimer : pauseTimer,
+            child: Text(isPaused ? "Resume" : "Pause"),
+          ),
+          const SizedBox(width: 12),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              setState(() {
+                isPaused = false;
+              });
+              cancelTimer();
+            },
+            child: const Text("Cancel"),
+          ),
+        ],
+      );
+    }
   }
 }
