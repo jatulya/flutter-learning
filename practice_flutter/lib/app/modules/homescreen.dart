@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/app/common/exports.dart';
+import 'package:practice_flutter/app/common/extensions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppStrings.appTitle.translate(context)),
+        title: Text(AppStrings.appTitle.translate()),
         centerTitle: true,
       ),
       body: Center(
@@ -16,22 +18,14 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Heading
             Text(
-              StringValues.home.translate(context),
-              style: AppTextStyles.thick24(context),
+              AppStrings.home.translate(),
+              style: AppTextStyles.lightHeadline1,
             ),
 
             const SizedBox(height: 24),
 
             // Button
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.about);
-              },
-              child: Text(
-                StringValues.about.translate(context),
-                style: AppTextStyles.thick20(context),
-              ),
-            ),
+            
           ],
         ),
       ),
