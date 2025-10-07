@@ -3,9 +3,9 @@ import 'app_colors.dart';
 
 class AppTextStyles {
   // Light theme
-  static const TextStyle lightHeadline1 = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
+  static const TextStyle headline1 = TextStyle(
+    fontSize: 46,
+    fontWeight: FontWeight.w600,
     color: AppColors.lightTextPrimary,
   );
 
