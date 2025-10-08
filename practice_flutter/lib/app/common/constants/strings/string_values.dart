@@ -7,7 +7,7 @@ class StringValues {
       AppStrings.home: "Home",
       AppStrings.pageFlipLightHeading: "Hello Sunshine !!",
       AppStrings.pageFlipDarkHeading: "Good night, Sleep tight!",
-
-    }, 
+      AppStrings.pageFlipAnimationTitle: "Page Flip Animation",
+    },
   };
 }
