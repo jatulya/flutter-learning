@@ -27,4 +27,16 @@ class AppTextStyles {
     fontWeight: FontWeight.normal,
     color: AppColors.darkTextSecondary,
   );
+
+  static const TextStyle darkCardTitle = TextStyle(
+    fontSize: 36,
+    fontWeight: FontWeight.normal,
+    color: AppColors.darkTextSecondary,
+  );
+
+  static const TextStyle lightCardTitle = TextStyle(
+    fontSize: 36,
+    fontWeight: FontWeight.normal,
+    color: AppColors.lightTextSecondary,
+  );
 }
