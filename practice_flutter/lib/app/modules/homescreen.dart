@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/app/common/constants/lists.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 
@@ -17,19 +18,34 @@ class HomeScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Heading
-            Text(
-              AppStrings.home.translate(),
-              style: AppTextStyles.lightHeadline1,
-            ),
-
+            Text(AppStrings.home.translate(), style: AppTextStyles.title46),
             const SizedBox(height: 24),
-
             // Button
-            
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: homeButtons.length,
+              itemBuilder: (context, index) {
+                final item = homeButtons[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8.0,
+                    horizontal: 16.0,
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, item.buttonNavigation);
+                    },
+                    child: Text(
+                      item.buttonName,
+                      style: AppTextStyles.lightBody,
+                    ),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
     );
   }
 }
-

@@ -5,6 +5,7 @@ class StringValues {
     "en": {
       AppStrings.appTitle: "Let's Practice Flutter",
       AppStrings.home: "Home",
-    }, 
+      AppStrings.pageFlipAnimationTitle: "Page Flip Animation",
+    },
   };
 }
