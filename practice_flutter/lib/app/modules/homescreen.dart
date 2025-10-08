@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_flutter/app/common/constants/lists.dart';
+import 'package:practice_flutter/app/common/constants/constant_values.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 

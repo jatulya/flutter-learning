@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/app/common/constants/constant_values.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 
 class LightPage extends StatelessWidget {
   const LightPage({super.key});
 
-  static const String profileImageUrl =
-      "https://images.unsplash.com/vector-1743321182619-a3a4279a911b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZSUyMHBob3RvfGVufDB8fDB8fHww";
-  static const String centerImageUrl =
-      "https://images.unsplash.com/vector-1758527144432-e916b7c7cb82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGF5JTIwc2t5fGVufDB8fDB8fHww";
-
   @override
   Widget build(BuildContext context) {
+    final String profileImageUrl = pageFlipImages[0].lightModeImage;
+    final String centerImageUrl = pageFlipImages[1].lightModeImage;
     return Card(
       color: AppColors.lightSurface,
       shape: RoundedRectangleBorder(
@@ -31,15 +29,13 @@ class LightPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    AppStrings.pageFlipLightHeading.translate(),
+                    AppStrings.pageFlipLightCardHeading.translate(),
                     style: AppTextStyles.lightCardTitle,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-
                 const SizedBox(width: 8),
-
                 // Profile image
                 CircleAvatar(
                   radius: 36,
