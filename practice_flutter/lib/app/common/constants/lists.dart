@@ -10,7 +10,7 @@ class ButtonItem {
 
 List<ButtonItem> get homeButtons => [
   ButtonItem(
-    buttonName: AppStrings.pageFlip.translate(),
-    buttonNavigation: AppRoutes.pageFlip,
+    buttonName: AppStrings.pageFlipAnimationTitle.translate(),
+    buttonNavigation: AppRoutes.pageFlipAnimationTitle,
   ),
 ];

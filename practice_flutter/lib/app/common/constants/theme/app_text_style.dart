@@ -3,7 +3,7 @@ import 'app_colors.dart';
 
 class AppTextStyles {
   // Light theme
-  static const TextStyle headline1 = TextStyle(
+  static const TextStyle title24 = TextStyle(
     fontSize: 46,
     fontWeight: FontWeight.w600,
     color: AppColors.lightTextPrimary,

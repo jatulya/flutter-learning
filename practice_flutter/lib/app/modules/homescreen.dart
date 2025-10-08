@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Heading
-            Text(AppStrings.home.translate(), style: AppTextStyles.headline1),
+            Text(AppStrings.home.translate(), style: AppTextStyles.title24),
             const SizedBox(height: 24),
             // Button
             ListView.builder(
