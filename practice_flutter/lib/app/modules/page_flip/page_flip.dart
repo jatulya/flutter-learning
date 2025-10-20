@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:practice_flutter/app/modules/page_flip/widgets/dark_page.dart';
 import 'package:practice_flutter/app/modules/page_flip/widgets/light_page.dart';
+import 'package:practice_flutter/app/modules/page_flip/widgets/page_flip_builder.dart';
 
-class PageFlip extends StatefulWidget{
+class PageFlip extends StatelessWidget {
   const PageFlip({super.key});
-  @override
-  State<PageFlip> createState() => _PageFlipState();
-}
 
-class _PageFlipState extends State<PageFlip> {
-  bool _isDark = true;
   @override
   Widget build(BuildContext context) {
-     return _isDark ? const DarkPage() : const LightPage();
+    final pageFlipKey = GlobalKey<PageFlipBuilderState>();
+
+    return Scaffold(
+      backgroundColor: Colors.black, // Prevent flicker during animation
+      body: PageFlipBuilder(
+        key: pageFlipKey,
+        frontBuilder: (_) => LightPage(
+          onFlip: () => pageFlipKey.currentState?.flip(),
+        ),
+        backBuilder: (_) => DarkPage(
+          onFlip: () => pageFlipKey.currentState?.flip(),
+        ),
+      ),
+    );
   }
 }
