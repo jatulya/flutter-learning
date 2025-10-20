@@ -56,7 +56,6 @@ class DarkPage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              print("CommitDebug: clicked dark");
               onFlip?.call();
             },
             child: const Icon(

@@ -27,3 +27,6 @@ we pass the controller as input to the builder
 controller  (programatically)
 -- we need a variable to tell which page should we show
 -- controller
+-- we defined a controller and initialized it in initstate
+-- we are listening to the animation status and updating the flip boolean accordingly
+

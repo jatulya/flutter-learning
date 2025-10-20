@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/app/modules/page_flip/widgets/animated_page_flip_builder.dart';
 
 class PageFlipBuilder extends StatefulWidget {
   //widget builders are used so that we can dynamically change it during animation
@@ -26,9 +27,9 @@ class PageFlipBuilderState extends State<PageFlipBuilder>
   void initState() {
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 1500),
     );
-   _controller.addStatusListener(_updateStatus);
+    _controller.addStatusListener(_updateStatus);
     super.initState();
   }
 
@@ -47,7 +48,6 @@ class PageFlipBuilderState extends State<PageFlipBuilder>
   }
 
   void flip() {
-    print('CommitDebug: clicked $_showFrontSide');
     if (_showFrontSide) {
       _controller.forward();
     } else {
@@ -57,6 +57,12 @@ class PageFlipBuilderState extends State<PageFlipBuilder>
 
   @override
   Widget build(BuildContext context) {
-    return widget.frontBuilder(context);
+    return AnimatedPageFlipBuilder(
+      //we are passinig the animation<double> value of the controller
+      animation: _controller,
+      showFrontSide: _showFrontSide,
+      frontBuilder: widget.frontBuilder,
+      backBuilder: widget.backBuilder,
+    );
   }
 }

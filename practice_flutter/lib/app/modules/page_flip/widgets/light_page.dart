@@ -56,7 +56,6 @@ class LightPage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              print("CommitDebug: clicked light");
               onFlip?.call();
             },
             child: const Icon(
