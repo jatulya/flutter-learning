@@ -1,32 +1,58 @@
-# practice_flutter
+# 🌀 Practice Flutter
 
-A new Flutter project.
+A new Flutter project to explore **page flipping animations** and **3D transitions** using `AnimationController` and `AnimatedBuilder`.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Overview
 
-A few resources to get you started if this is your first Flutter project:
+This project demonstrates how to create a **page flip animation** in Flutter using 3D transformations.  
+The key idea is to **render only one page at a time** for better performance — either the front or the back — based on the animation progress.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧠 Core Concept
 
-in page_flip_builder.dart 
-we gave WidgetBuilder parameters instead of Widgets. This is because we are seeing only one screen at any time. 
-so it is more performance boost to use widgetbuilder and let the pageFlipBuilder call the correct one.
+In `page_flip_builder.dart`, instead of directly passing **widgets**, we use **`WidgetBuilder`** parameters.  
 
-to animate, we use the following
--- animationcontroller to control the flip transition
--- animationbuilder to rotate the front/back page with 3D transform, based on animation value
-we pass the controller as input to the builder
+### Why `WidgetBuilder`?
+Because at any given moment, **only one side of the page (front or back)** is visible.  
+By passing builders rather than full widget trees, we:
+- Avoid building unnecessary widgets.
+- Improve rendering performance.
+- Allow the flip animation to dynamically decide which page to display.
 
-controller  (programatically)
--- we need a variable to tell which page should we show
--- controller
--- we defined a controller and initialized it in initstate
--- we are listening to the animation status and updating the flip boolean accordingly
+---
 
+## ⚙️ Animation Logic
+
+To achieve the flip effect, we use the following components:
+
+### 1. **`AnimationController`**
+- Controls the flip transition duration and progress.
+- Drives the animation value from `0` → `1`.
+- Allows triggering flips programmatically (e.g., via button press).
+
+### 2. **`AnimatedBuilder`**
+- Rebuilds the UI based on animation progress.
+- Applies **3D rotation transforms** (`Matrix4.rotationY`) to simulate a realistic page-flip effect.
+- Determines which side (front or back) to render based on the current animation value.
+
+---
+
+## 🧩 Controller Details
+
+To control the flipping behavior programmatically, we use an animation controller and a simple boolean flag.
+
+### Steps:
+1. **Define a variable** to track which side of the page is currently visible.
+2. **Initialize the `AnimationController`** inside `initState`.
+3. **Listen to animation status changes** to update the boolean (e.g., when the flip completes).
+4. **Trigger the animation** programmatically whenever a flip action is required.
+
+Example:
+```dart
+void flip() {
+  if (_controller.isAnimating) return;
+  _controller.forward(from: 0);
+}

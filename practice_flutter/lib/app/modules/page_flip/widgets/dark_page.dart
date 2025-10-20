@@ -18,13 +18,6 @@ class DarkPage extends StatelessWidget {
         color: AppColors.darkSurface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.darkAccent, width: 2),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.darkShadow,
-            blurRadius: 4, // similar to elevation
-            offset: const Offset(0, 2),
-          ),
-        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -43,7 +36,6 @@ class DarkPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              // Profile image
               CircleAvatar(
                 radius: 36,
                 backgroundImage: NetworkImage(profileImageUrl),

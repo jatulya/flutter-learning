@@ -25,6 +25,7 @@ class AnimatedPageFlipBuilder extends StatelessWidget {
             ? frontBuilder(context)
             : backBuilder(context);
         final rotationValue = animation.value * pi; //maps [0.0,1.0] to [0,pi]
+
         // calculate the correct rotation angle depening on which page we need to show
         // if same value is given for both, one shows miirrored image
         final rotationAngle = isAnimationFirstHalf
@@ -32,7 +33,7 @@ class AnimatedPageFlipBuilder extends StatelessWidget {
             : pi - rotationValue;
         //tilt grows as animation is around middle, then decreases
         var tilt = (animation.value - 0.5).abs() - 0.5;
-        // make this a small value (positive or negative as needed)
+        // tilt value needs to be as small as possible for the animation not to break
         tilt *= isAnimationFirstHalf ? -0.003 : 0.003;
 
         return Transform(
