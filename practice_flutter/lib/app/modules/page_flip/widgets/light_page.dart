@@ -27,6 +27,17 @@ class LightPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  Icons.arrow_back,
+                  color: AppColors.lightTextPrimary,
+                  size: AppSpacing.lg,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: Text(
                   AppStrings.pageFlipLightCardHeading.translate(),

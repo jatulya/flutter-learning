@@ -27,6 +27,17 @@ class DarkPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  Icons.arrow_back,
+                  color: AppColors.darkTextPrimary,
+                  size: AppSpacing.lg,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: Text(
                   AppStrings.pageFlipDarkCardHeading.translate(),
