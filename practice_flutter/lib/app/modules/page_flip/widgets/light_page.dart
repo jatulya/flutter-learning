@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:practice_flutter/app/common/constants/constant_values.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 
@@ -37,7 +36,7 @@ class LightPage extends StatelessWidget {
                   size: AppSpacing.lg,
                 ),
               ),
-              const SizedBox(width: AppSpacing.md),
+              const SizedBox  (width: AppSpacing.md),
               Expanded(
                 child: Text(
                   AppStrings.pageFlipLightCardHeading.translate(),

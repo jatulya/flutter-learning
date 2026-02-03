@@ -1,5 +1,6 @@
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
+import 'package:practice_flutter/app/models/scroll_section/card_item.dart';
 
 class ButtonItem {
   final String buttonName;
@@ -12,6 +13,10 @@ List<ButtonItem> get homeButtons => [
   ButtonItem(
     buttonName: AppStrings.pageFlipAnimationTitle.translate(),
     buttonNavigation: AppRoutes.pageFlip,
+  ),
+  ButtonItem(
+    buttonName: AppStrings.sliverPracticeTitle.translate(),
+    buttonNavigation: AppRoutes.sliverPractice,
   ),
 ];
 
@@ -38,3 +43,11 @@ List<Images> get pageFlipImages => [
         "https://images.unsplash.com/vector-1758527144432-e916b7c7cb82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGF5JTIwc2t5fGVufDB8fDB8fHww",
   ),
 ];
+
+List<CardItem> sliverHorizontalCards = List.generate(
+  10,
+  (index) => CardItem(
+    imageUrl: 'https://picsum.photos/300/400?random=$index',
+    textToShow: 'Card Item $index',
+  ),
+);

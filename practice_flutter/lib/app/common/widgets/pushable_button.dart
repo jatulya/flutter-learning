@@ -46,6 +46,7 @@ class _PushableButtonState extends State<PushableButton> {
           vertical: AppSpacing.md,
           horizontal: AppSpacing.lg,
         ),
+        margin: const EdgeInsets.symmetric(horizontal: AppSpacing.xl),
         child: Text(
           widget.text,
           textAlign: TextAlign.center,
