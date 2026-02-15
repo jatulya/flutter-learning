@@ -36,7 +36,7 @@ class LightPage extends StatelessWidget {
                   size: AppSpacing.lg,
                 ),
               ),
-              const SizedBox  (width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: Text(
                   AppStrings.pageFlipLightCardHeading.translate(),
