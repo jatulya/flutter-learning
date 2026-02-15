@@ -33,10 +33,10 @@ class LightPage extends StatelessWidget {
                 child: const Icon(
                   Icons.arrow_back,
                   color: AppColors.lightTextPrimary,
-                  size: AppSpacing.lg,
+                  size: AppSpacing.spacing24,
                 ),
               ),
-              const SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.spacing16),
               Expanded(
                 child: Text(
                   AppStrings.pageFlipLightCardHeading.translate(),

@@ -18,4 +18,8 @@ class AppColors {
   static const Color darkTextPrimary = Color(0xFFE0F2E9);
   static const Color darkTextSecondary = Color(0xFFB2C8B8);
   static const Color darkShadow = Color(0x661C2A20); // 40% opacity
+
+  static const Color grey = Color(0xFF9E9E9E);
+  static const Color grey200 = Color(0xFFE0E0E0);
+
 }

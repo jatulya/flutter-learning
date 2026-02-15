@@ -14,7 +14,7 @@ class CustomAppBarTitle extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 56),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.spacing56),
         child: Align(
           alignment: Alignment.centerLeft,
           child: Text(

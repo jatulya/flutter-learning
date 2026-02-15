@@ -31,7 +31,7 @@ class _PushableButtonState extends State<PushableButton> {
         transform: Matrix4.translationValues(0, _isPressed ? 10 : 0, 0),
         decoration: BoxDecoration(
           color: AppColors.lightPrimary,
-          borderRadius: BorderRadius.circular(AppSpacing.xl),
+          borderRadius: BorderRadius.circular(AppSpacing.spacing32),
           boxShadow: _isPressed
               ? []
               : [
@@ -43,10 +43,10 @@ class _PushableButtonState extends State<PushableButton> {
                 ],
         ),
         padding: const EdgeInsets.symmetric(
-          vertical: AppSpacing.md,
-          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.spacing16,
+          horizontal: AppSpacing.spacing24,
         ),
-        margin: const EdgeInsets.symmetric(horizontal: AppSpacing.xl),
+        margin: const EdgeInsets.symmetric(horizontal: AppSpacing.spacing32),
         child: Text(
           widget.text,
           textAlign: TextAlign.center,
