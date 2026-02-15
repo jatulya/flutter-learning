@@ -8,6 +8,7 @@ class StringValues {
       AppStrings.pageFlipLightCardHeading: "Hello, Sunshine!",
       AppStrings.pageFlipDarkCardHeading: "Good night, Sleep tight!",
       AppStrings.pageFlipAnimationTitle: "Page Flip Animation",
+      AppStrings.sliverPracticeTitle: "Sliver Practice",
     },
   };
 }

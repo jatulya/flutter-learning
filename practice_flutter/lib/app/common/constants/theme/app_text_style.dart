@@ -39,4 +39,16 @@ class AppTextStyles {
     fontWeight: FontWeight.normal,
     color: AppColors.lightTextSecondary,
   );
+
+  static const TextStyle defaultTitle = TextStyle(
+    fontSize: 36,
+    fontWeight: FontWeight.w400,
+    color: AppColors.lightTextPrimary,
+  );
+
+  static const TextStyle defaultBody = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: AppColors.lightSurface,
+  );
 }
