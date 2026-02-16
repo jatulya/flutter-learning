@@ -18,6 +18,10 @@ List<ButtonItem> get homeButtons => [
     buttonName: AppStrings.sliverPracticeTitle.translate(),
     buttonNavigation: AppRoutes.sliverPractice,
   ),
+  ButtonItem(
+    buttonName: AppStrings.fadeTransitionButtonTitle.translate(),
+    buttonNavigation: AppRoutes.fadeTransition,
+  ),
 ];
 
 class Images {

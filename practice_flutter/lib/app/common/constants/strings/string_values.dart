@@ -9,6 +9,8 @@ class StringValues {
       AppStrings.pageFlipDarkCardHeading: "Good night, Sleep tight!",
       AppStrings.pageFlipAnimationTitle: "Page Flip Animation",
       AppStrings.sliverPracticeTitle: "Sliver Practice",
+      AppStrings.fadeTransitionTitle: "Fade Transition Demo",
+      AppStrings.fadeTransitionButtonTitle: "Fade Transition",
     },
   };
 }
