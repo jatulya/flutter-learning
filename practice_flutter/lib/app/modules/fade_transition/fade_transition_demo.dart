@@ -86,12 +86,10 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
                 ).animate(_curvedAnimation),
                 child: Text(
                   AppStrings.fadeTransitionTitle.translate(),
-                  style: TextStyle(
+                  style: AppTextStyles.defaultTitle.copyWith(
                     color: isDark
                         ? AppColors.darkTextPrimary
                         : AppColors.lightTextPrimary,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
