@@ -5,4 +5,6 @@ class AppStrings {
   static const String pageFlipDarkCardHeading = "pageFlipDarkCardHeading";
   static const String pageFlipAnimationTitle = "pageFlipAnimationTitle";
   static const String sliverPracticeTitle = "sliverPracticeTitle";
+  static const String fadeTransitionTitle = "fadeTransitionTitle";
+  static const String fadeTransitionButtonTitle = "fadeTransitionButtonTitle";
 }
