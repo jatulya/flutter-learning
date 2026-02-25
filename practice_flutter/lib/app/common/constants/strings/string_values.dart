@@ -11,6 +11,7 @@ class StringValues {
       AppStrings.sliverPracticeTitle: "Sliver Practice",
       AppStrings.fadeTransitionTitle: "Fade Transition Demo",
       AppStrings.fadeTransitionButtonTitle: "Fade Transition",
+      AppStrings.slidingCardsHeading: "Sliding Cards",
     },
   };
 }

@@ -7,4 +7,5 @@ class AppStrings {
   static const String sliverPracticeTitle = "sliverPracticeTitle";
   static const String fadeTransitionTitle = "fadeTransitionTitle";
   static const String fadeTransitionButtonTitle = "fadeTransitionButtonTitle";
+  static const String slidingCardsHeading = "slidingCardsHeading";
 }
