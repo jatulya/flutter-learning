@@ -4,10 +4,7 @@ import 'package:practice_flutter/app/common/exports.dart';
 class CustomAppBarTitle extends StatelessWidget {
   final String title;
 
-  const CustomAppBarTitle({
-    super.key,
-    required this.title,
-  });
+  const CustomAppBarTitle({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +18,7 @@ class CustomAppBarTitle extends StatelessWidget {
             title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: AppTextStyles.defaultTitle,
+            style: AppTextStyles.normal36.copyWith(color: AppColors.green90),
           ),
         ),
       ),

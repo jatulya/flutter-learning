@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/app/common/constants/constant_values.dart' as constantValues;
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
+import 'widgets/sliding_cards_list.dart';
 
 class FadeTransitionDemo extends StatefulWidget {
   const FadeTransitionDemo({super.key});
@@ -43,14 +45,10 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor = isDark
-        ? AppColors.darkBackground
-        : AppColors.lightBackground;
+    final backgroundColor = isDark ? AppColors.green100 : AppColors.green10;
 
     // Gradient colors based on theme
-    final gradientColors = isDark
-        ? [AppColors.darkPrimary, AppColors.darkAccent]
-        : [AppColors.lightPrimary, AppColors.lightAccent];
+    final gradientColors = [AppColors.green50, AppColors.green60];
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -78,7 +76,6 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
             ),
             child: FadeTransition(
               opacity: _fadeAnimation,
-              //want slide animation from top to bottom
               child: SlideTransition(
                 position: Tween<Offset>(
                   begin: const Offset(0, -1),
@@ -86,15 +83,14 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
                 ).animate(_curvedAnimation),
                 child: Text(
                   AppStrings.fadeTransitionTitle.translate(),
-                  style: AppTextStyles.defaultTitle.copyWith(
-                    color: isDark
-                        ? AppColors.darkTextPrimary
-                        : AppColors.lightTextPrimary,
+                  style: AppTextStyles.normal36.copyWith(
+                    color: isDark ? AppColors.green10 : AppColors.green90,
                   ),
                 ),
               ),
             ),
           ),
+          Expanded(child: SlidingCardsList(items: constantValues.iconCardItems)),
         ],
       ),
     );

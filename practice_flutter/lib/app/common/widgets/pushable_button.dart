@@ -30,13 +30,13 @@ class _PushableButtonState extends State<PushableButton> {
         curve: Curves.easeOut,
         transform: Matrix4.translationValues(0, _isPressed ? 10 : 0, 0),
         decoration: BoxDecoration(
-          color: AppColors.lightPrimary,
+          color: AppColors.green50,
           borderRadius: BorderRadius.circular(AppSpacing.xl),
           boxShadow: _isPressed
               ? []
               : [
                   const BoxShadow(
-                    color: AppColors.darkAccent,
+                    color: AppColors.green60,
                     offset: Offset(0, 8),
                     blurRadius: 0,
                   ),
@@ -51,7 +51,7 @@ class _PushableButtonState extends State<PushableButton> {
           widget.text,
           textAlign: TextAlign.center,
           style: const TextStyle(
-            color: AppColors.lightBackground,
+            color: AppColors.green90,
             fontWeight: FontWeight.w600,
             fontSize: 16,
           ),

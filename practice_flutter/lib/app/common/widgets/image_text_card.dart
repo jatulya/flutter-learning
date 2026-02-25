@@ -37,7 +37,7 @@ class ImageTextCard extends StatelessWidget {
             ),
             alignment: Alignment.bottomLeft,
             child: Text(
-              item.textToShow ?? '',
+              item.title ?? '',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
