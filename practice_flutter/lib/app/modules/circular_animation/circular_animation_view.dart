@@ -3,17 +3,16 @@ import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 import '../../models/circular_animation/circular_animation_item.dart';
 
-class CircularAnimations extends StatelessWidget {
-  const CircularAnimations({super.key});
+class CircularAnimationView extends StatelessWidget {
+  const CircularAnimationView({super.key});
 
   List<CircularAnimationItem> get _animationItems => [
-    CircularAnimationItem(
-      title: "",
-      description:
-          "",
-      animationWidget: const SizedBox.shrink(),
-      ),
-    
+    // syntax for adding a new animation item:
+    // CircularAnimationItem(
+    //   title: "Title of the animation",
+    //   description: "Description of the animation",
+    //   animationWidget: The widget to be displayed in the animation,
+    // ),
   ];
 
   @override
@@ -26,13 +25,11 @@ class CircularAnimations extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: CustomScrollView(
-        physics:
-            const NeverScrollableScrollPhysics(), // Disable CustomScrollView scrolling
+      body: CustomScrollView( // used to get - SliverAppBar and SliverFillRemaining
+        physics: const NeverScrollableScrollPhysics(), // prevents conflict with the PageView scrolling
         slivers: [
           SliverAppBar(
             expandedHeight: 70,
-            collapsedHeight: 70,
             pinned: true,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
@@ -50,7 +47,6 @@ class CircularAnimations extends StatelessWidget {
             ),
           ),
 
-          // PageView for animations
           SliverFillRemaining(
             child: PageView.builder(
               scrollDirection: Axis.vertical,

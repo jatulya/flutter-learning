@@ -24,7 +24,7 @@ List<ButtonItem> get homeButtons => [
     buttonNavigation: AppRoutes.fadeTransition,
   ),
   ButtonItem(
-    buttonName: AppStrings.smoothCircleAnimationTitle.translate(),
+    buttonName: AppStrings.circularAnimationsTitle.translate(),
     buttonNavigation: AppRoutes.smoothCircleAnimation,
   ),
 ];
