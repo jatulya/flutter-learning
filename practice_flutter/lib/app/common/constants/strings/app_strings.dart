@@ -8,4 +8,8 @@ class AppStrings {
   static const String fadeTransitionTitle = "fadeTransitionTitle";
   static const String fadeTransitionButtonTitle = "fadeTransitionButtonTitle";
   static const String slidingCardsHeading = "slidingCardsHeading";
+  static const String circularAnimationsTitle = "circularAnimationsTitle";
+  static const String circularAnimationsDescription =
+      "circularAnimationsDescription";
+ 
 }

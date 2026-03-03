@@ -12,6 +12,9 @@ class StringValues {
       AppStrings.fadeTransitionTitle: "Fade Transition Demo",
       AppStrings.fadeTransitionButtonTitle: "Fade Transition",
       AppStrings.slidingCardsHeading: "Sliding Cards",
-    },
+      AppStrings.circularAnimationsTitle: "Circular Animations",
+      AppStrings.circularAnimationsDescription:
+          "This is a list of circular animations.",
+      },
   };
 }
