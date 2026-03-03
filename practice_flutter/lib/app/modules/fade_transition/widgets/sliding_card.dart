@@ -82,7 +82,7 @@ class _SlidingCardState extends State<SlidingCard>
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final cardColor = isDark ? AppColors.green90 : AppColors.green20;
     final textColor = isDark ? AppColors.green10 : AppColors.green90;
-    final secondaryTextColor = isDark ? AppColors.green30 : AppColors.green70;
+    final secondaryTextColor = isDark ? AppColors.green30 : AppColors.grey20;
 
     return SlideTransition(
       position: _slideAnimation,
@@ -91,13 +91,13 @@ class _SlidingCardState extends State<SlidingCard>
         child: Container(
           key: _cardKey,
           margin: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.xl,
-            vertical: AppSpacing.sm,
+            horizontal: AppSpacing.spacing16,
+            vertical: AppSpacing.spacing8,
           ),
-          padding: const EdgeInsets.all(AppSpacing.md),
+          padding: const EdgeInsets.all(AppSpacing.spacing16),
           decoration: BoxDecoration(
             color: cardColor,
-            borderRadius: BorderRadius.circular(AppSpacing.md),
+            borderRadius: BorderRadius.circular(AppSpacing.spacing16),
             boxShadow: [
               BoxShadow(
                 color: isDark
@@ -112,10 +112,10 @@ class _SlidingCardState extends State<SlidingCard>
             children: [
               // Icon on the left
               Container(
-                padding: const EdgeInsets.all(AppSpacing.sm),
+                padding: const EdgeInsets.all(AppSpacing.spacing12),
                 decoration: BoxDecoration(
                   color: AppColors.green50,
-                  borderRadius: BorderRadius.circular(AppSpacing.sm),
+                  borderRadius: BorderRadius.circular(AppSpacing.spacing12),
                 ),
                 child: Icon(
                   widget.item.icon,
@@ -123,7 +123,7 @@ class _SlidingCardState extends State<SlidingCard>
                   size: 32,
                 ),
               ),
-              const SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.spacing12),
               // Name and description on the right
               Expanded(
                 child: Column(
@@ -133,7 +133,7 @@ class _SlidingCardState extends State<SlidingCard>
                       widget.item.title ?? '',
                       style: AppTextStyles.title18.copyWith(color: textColor),
                     ),
-                    const SizedBox(height: AppSpacing.xs),
+                    const SizedBox(height: AppSpacing.spacing8),
                     Text(
                       widget.item.description ?? '',
                       style: AppTextStyles.normal14.copyWith(

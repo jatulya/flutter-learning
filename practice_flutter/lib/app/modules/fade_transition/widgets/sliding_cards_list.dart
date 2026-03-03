@@ -25,8 +25,8 @@ class SlidingCardsList extends StatelessWidget {
           // Heading
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.xl,
-              vertical: AppSpacing.md,
+              horizontal: AppSpacing.spacing16,
+              vertical: AppSpacing.spacing12,
             ),
             child: Text(
               AppStrings.slidingCardsHeading.translate(),

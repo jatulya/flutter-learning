@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:practice_flutter/app/common/constants/constant_values.dart' as constantValues;
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 import 'widgets/sliding_cards_list.dart';
@@ -64,8 +63,8 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
           Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.xl,
-              vertical: AppSpacing.lg,
+              horizontal: AppSpacing.spacing16,
+              vertical: AppSpacing.spacing12,
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -90,7 +89,7 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
               ),
             ),
           ),
-          Expanded(child: SlidingCardsList(items: constantValues.iconCardItems)),
+          Expanded(child: SlidingCardsList(items: iconCardItems)),
         ],
       ),
     );

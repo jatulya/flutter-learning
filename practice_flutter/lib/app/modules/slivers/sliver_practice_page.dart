@@ -26,7 +26,7 @@ class SliverPracticePage extends StatelessWidget {
               height: 333,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
                 itemCount: sliverHorizontalCards.length,
                 itemBuilder: (context, index) {
                   return ImageTextCard(item: sliverHorizontalCards[index]);

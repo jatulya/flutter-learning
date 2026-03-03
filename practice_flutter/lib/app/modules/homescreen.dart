@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           // Heading
           Text(AppStrings.home.translate(), style: AppTextStyles.title46),
-          const SizedBox(height: AppSpacing.lg),
+          const SizedBox(height: AppSpacing.spacing24),
           // Button
           Expanded(
             child: ListView.separated(

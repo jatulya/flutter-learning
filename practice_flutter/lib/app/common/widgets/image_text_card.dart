@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/models/scroll_section/card_item.dart';
 
 class ImageTextCard extends StatelessWidget {
@@ -12,7 +13,7 @@ class ImageTextCard extends StatelessWidget {
       width: 220,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.grey.shade200,
+        color: AppColors.grey10,
       ),
       clipBehavior: Clip.hardEdge,
       child: Column(
@@ -22,17 +23,17 @@ class ImageTextCard extends StatelessWidget {
           Expanded(
             child: item.imageUrl != null
                 ? Image.network(item.imageUrl ?? '', fit: BoxFit.cover)
-                : Container(color: Colors.grey),
+                : Container(color: AppColors.grey),
           ),
 
           // Text section with gradient background
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(AppSpacing.spacing12),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.black54, Colors.black87],
+                colors: [AppColors.green80, AppColors.green85],
               ),
             ),
             alignment: Alignment.bottomLeft,
