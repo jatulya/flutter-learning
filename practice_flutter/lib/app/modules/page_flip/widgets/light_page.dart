@@ -14,9 +14,9 @@ class LightPage extends StatelessWidget {
       height: double.infinity,
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: AppColors.lightSurface,
+        color: AppColors.green20,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.lightAccent, width: 2),
+        border: Border.all(color: AppColors.green60, width: 2),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -32,7 +32,7 @@ class LightPage extends StatelessWidget {
                 },
                 child: const Icon(
                   Icons.arrow_back,
-                  color: AppColors.lightTextPrimary,
+                  color: AppColors.green90,
                   size: AppSpacing.spacing24,
                 ),
               ),
@@ -40,7 +40,7 @@ class LightPage extends StatelessWidget {
               Expanded(
                 child: Text(
                   AppStrings.pageFlipLightCardHeading.translate(),
-                  style: AppTextStyles.lightCardTitle,
+                  style: AppTextStyles.normal36,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -62,7 +62,7 @@ class LightPage extends StatelessWidget {
             },
             child: const Icon(
               Icons.flip,
-              color: AppColors.lightTextPrimary,
+              color: AppColors.green90,
               size: 36,
             ),
           ),

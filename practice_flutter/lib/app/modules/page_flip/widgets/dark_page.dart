@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:practice_flutter/app/common/constants/constant_values.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 
@@ -15,9 +14,9 @@ class DarkPage extends StatelessWidget {
       height: double.infinity,
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: AppColors.darkSurface,
+        color: AppColors.green90,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.darkAccent, width: 2),
+        border: Border.all(color: AppColors.green60, width: 2),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -33,7 +32,7 @@ class DarkPage extends StatelessWidget {
                 },
                 child: const Icon(
                   Icons.arrow_back,
-                  color: AppColors.darkTextPrimary,
+                  color: AppColors.green10,
                   size: AppSpacing.spacing24,
                 ),
               ),
@@ -41,7 +40,9 @@ class DarkPage extends StatelessWidget {
               Expanded(
                 child: Text(
                   AppStrings.pageFlipDarkCardHeading.translate(),
-                  style: AppTextStyles.darkCardTitle,
+                  style: AppTextStyles.normal36.copyWith(
+                    color: AppColors.green30,
+                  ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -63,7 +64,7 @@ class DarkPage extends StatelessWidget {
             },
             child: const Icon(
               Icons.flip,
-              color: AppColors.darkTextPrimary,
+              color: AppColors.green10,
               size: 36,
             ),
           ),

@@ -1,19 +1,24 @@
+import 'package:flutter/material.dart';
+
 class CardItem {
   final String? imageUrl;
-  final String? textToShow;
+  final String? title;
+  final IconData? icon;
+  final String? description;
 
-  const CardItem({
-    this.imageUrl,
-    this.textToShow,
-  });
+  const CardItem({this.imageUrl, this.title, this.icon, this.description});
 
   CardItem copyWith({
     String? imageUrl,
-    String? textToShow,
+    String? title,
+    IconData? icon,
+    String? description,
   }) {
     return CardItem(
       imageUrl: imageUrl ?? this.imageUrl,
-      textToShow: textToShow ?? this.textToShow,
+      title: title ?? this.title,
+      icon: icon ?? this.icon,
+      description: description ?? this.description,
     );
   }
 }

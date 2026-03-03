@@ -12,8 +12,3 @@ export 'routes/app_routes.dart';
 export 'widgets/custom_app_bar.dart';
 export 'widgets/image_text_card.dart';
 export 'widgets/pushable_button.dart';
-
-
-
-
-

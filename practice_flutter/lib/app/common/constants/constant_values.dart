@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 import 'package:practice_flutter/app/models/scroll_section/card_item.dart';
@@ -17,6 +18,10 @@ List<ButtonItem> get homeButtons => [
   ButtonItem(
     buttonName: AppStrings.sliverPracticeTitle.translate(),
     buttonNavigation: AppRoutes.sliverPractice,
+  ),
+  ButtonItem(
+    buttonName: AppStrings.fadeTransitionButtonTitle.translate(),
+    buttonNavigation: AppRoutes.fadeTransition,
   ),
 ];
 
@@ -48,6 +53,59 @@ List<CardItem> sliverHorizontalCards = List.generate(
   10,
   (index) => CardItem(
     imageUrl: 'https://picsum.photos/300/400?random=$index',
-    textToShow: 'Card Item $index',
+    title: 'Card Item $index',
   ),
 );
+
+List<CardItem> get iconCardItems => [
+  const CardItem(
+    icon: Icons.home,
+    title: "Home",
+    description: "Navigate to the main screen of the application",
+  ),
+  const CardItem(
+    icon: Icons.settings,
+    title: "Settings",
+    description: "Access and modify application preferences",
+  ),
+  const CardItem(
+    icon: Icons.favorite,
+    title: "Favorite",
+    description: "Mark items as your preferred choices",
+  ),
+  const CardItem(
+    icon: Icons.search,
+    title: "Search",
+    description: "Find and filter content within the app",
+  ),
+  const CardItem(
+    icon: Icons.notifications,
+    title: "Notifications",
+    description: "View and manage your app alerts",
+  ),
+    const CardItem(
+    icon: Icons.person,
+    title: "Profile",
+    description: "Access your personal account information",
+  ),
+  const CardItem(
+    icon: Icons.shopping_cart,
+    title: "Cart",
+    description: "View items you've added for purchase",
+  ),
+  const CardItem(
+    icon: Icons.share,
+    title: "Share",
+    description: "Send content to other apps or contacts",
+  ),
+  const CardItem(
+    icon: Icons.download,
+    title: "Download",
+    description: "Save files and content to your device",
+  ),
+  const CardItem(
+    icon: Icons.delete,
+    title: "Delete",
+    description: "Remove items permanently from the app",
+  ),
+];

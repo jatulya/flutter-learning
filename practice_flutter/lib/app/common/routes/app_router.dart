@@ -3,6 +3,7 @@ import 'package:practice_flutter/app/common/routes/app_routes.dart';
 import 'package:practice_flutter/app/modules/homescreen.dart';
 import 'package:practice_flutter/app/modules/page_flip/page_flip.dart';
 import 'package:practice_flutter/app/modules/slivers/sliver_practice_page.dart';
+import 'package:practice_flutter/app/modules/fade_transition/fade_transition_demo.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -13,6 +14,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const PageFlip());
       case AppRoutes.sliverPractice:
         return MaterialPageRoute(builder: (_) => const SliverPracticePage());
+      case AppRoutes.fadeTransition:
+        return MaterialPageRoute(builder: (_) => const FadeTransitionDemo());
       default:
         return MaterialPageRoute(
           builder: (_) =>

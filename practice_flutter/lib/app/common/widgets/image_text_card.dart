@@ -13,7 +13,7 @@ class ImageTextCard extends StatelessWidget {
       width: 220,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: AppColors.grey200,
+        color: AppColors.grey10,
       ),
       clipBehavior: Clip.hardEdge,
       child: Column(
@@ -33,15 +33,19 @@ class ImageTextCard extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [AppColors.darkAccent, AppColors.darkPrimary],
+                colors: [AppColors.green80, AppColors.green85],
               ),
             ),
             alignment: Alignment.bottomLeft,
             child: Text(
-              item.textToShow ?? '',
+              item.title ?? '',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.defaultBody,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ],
