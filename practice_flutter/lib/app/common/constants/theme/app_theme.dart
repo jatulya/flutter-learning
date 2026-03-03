@@ -4,23 +4,23 @@ import 'app_colors.dart';
 class AppTheme {
   // ---------- LIGHT THEME ----------
   static ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.lightBackground,
-    primaryColor: AppColors.lightPrimary,
+    scaffoldBackgroundColor: AppColors.green10,
+    primaryColor: AppColors.green50,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.lightPrimary,
-      primary: AppColors.lightPrimary,
-      secondary: AppColors.lightAccent,
+      seedColor: AppColors.green50,
+      primary: AppColors.green50,
+      secondary: AppColors.green60,
       brightness: Brightness.light,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.lightSurface,
-      foregroundColor: AppColors.lightTextPrimary,
+      backgroundColor: AppColors.green20,
+      foregroundColor: AppColors.green90,
       elevation: 0,
     ),
-    shadowColor: AppColors.lightShadow,
+    shadowColor: AppColors.green90.withValues(alpha: 0.2),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.lightPrimary,
+        backgroundColor: AppColors.green50,
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(
@@ -32,23 +32,23 @@ class AppTheme {
 
   // ---------- DARK THEME ----------
   static ThemeData darkTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.darkBackground,
-    primaryColor: AppColors.darkPrimary,
+scaffoldBackgroundColor: AppColors.green100,
+    primaryColor: AppColors.green50,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.darkPrimary,
-      primary: AppColors.darkPrimary,
-      secondary: AppColors.darkAccent,
+      seedColor: AppColors.green50,
+      primary: AppColors.green50,
+      secondary: AppColors.green60,
       brightness: Brightness.dark,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.darkSurface,
-      foregroundColor: AppColors.darkTextPrimary,
+      backgroundColor: AppColors.green90,
+      foregroundColor: AppColors.green10,
       elevation: 0,
     ),
-    shadowColor: AppColors.darkShadow,
+    shadowColor: AppColors.green100.withValues(alpha: 0.4),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.darkPrimary,
+        backgroundColor: AppColors.green50,
         foregroundColor: Colors.black,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(
