@@ -23,6 +23,10 @@ List<ButtonItem> get homeButtons => [
     buttonName: AppStrings.fadeTransitionButtonTitle.translate(),
     buttonNavigation: AppRoutes.fadeTransition,
   ),
+  ButtonItem(
+    buttonName: AppStrings.circularAnimationsTitle.translate(),
+    buttonNavigation: AppRoutes.smoothCircleAnimation,
+  ),
 ];
 
 class Images {
