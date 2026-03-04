@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
+import 'package:practice_flutter/app/modules/circular_animation/widgets/pulsing_circle_animation.dart';
 import '../../models/circular_animation/circular_animation_item.dart';
 
 class CircularAnimationView extends StatelessWidget {
   const CircularAnimationView({super.key});
 
   List<CircularAnimationItem> get _animationItems => [
-    // syntax for adding a new animation item:
-    // CircularAnimationItem(
-    //   title: "Title of the animation",
-    //   description: "Description of the animation",
-    //   animationWidget: The widget to be displayed in the animation,
-    // ),
+    CircularAnimationItem(
+      title: AppStrings.smoothCircleAnimationTitle.translate(),
+      description: AppStrings.smoothCircleAnimationDescription.translate(),
+      animationWidget: const PulsingCircleAnimation(),
+    ),
   ];
 
   @override
@@ -25,8 +25,10 @@ class CircularAnimationView extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: CustomScrollView( // used to get - SliverAppBar and SliverFillRemaining
-        physics: const NeverScrollableScrollPhysics(), // prevents conflict with the PageView scrolling
+      body: CustomScrollView(
+        // used to get - SliverAppBar and SliverFillRemaining
+        physics:
+            const NeverScrollableScrollPhysics(), // prevents conflict with the PageView scrolling
         slivers: [
           SliverAppBar(
             expandedHeight: 70,
