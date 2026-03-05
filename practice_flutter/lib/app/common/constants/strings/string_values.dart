@@ -15,6 +15,9 @@ class StringValues {
       AppStrings.circularAnimationsTitle: "Circular Animations",
       AppStrings.circularAnimationsDescription:
           "This is a list of circular animations.",
+      AppStrings.smoothCircleAnimationTitle: "Smooth Circle Animation",
+      AppStrings.smoothCircleAnimationDescription:
+          "A circle with distinct color shades creating concentric rings.",
       AppStrings.circularRevolvingAnimationTitle:
           "Circular Revolving Animation",
       AppStrings.circularRevolvingAnimationDescription:

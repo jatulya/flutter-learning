@@ -11,6 +11,9 @@ class AppStrings {
   static const String circularAnimationsTitle = "circularAnimationsTitle";
   static const String circularAnimationsDescription =
       "circularAnimationsDescription";
+  static const String smoothCircleAnimationTitle = "smoothCircleAnimationTitle";
+  static const String smoothCircleAnimationDescription =
+      "smoothCircleAnimationDescription";
   static const String circularRevolvingAnimationTitle =
       "circularRevolvingAnimationTitle";
   static const String circularRevolvingAnimationDescription =
