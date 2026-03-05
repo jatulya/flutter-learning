@@ -18,6 +18,10 @@ class StringValues {
       AppStrings.smoothCircleAnimationTitle: "Smooth Circle Animation",
       AppStrings.smoothCircleAnimationDescription:
           "A circle with distinct color shades creating concentric rings.",
+      AppStrings.circularRevolvingAnimationTitle:
+          "Circular Revolving Animation",
+      AppStrings.circularRevolvingAnimationDescription:
+          "Items from Percy Jackson Olympians series revolve around a vertical circle. The item at the top center is 1.5x larger and brighter.",
     },
   };
 }

@@ -3,6 +3,7 @@ import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
 import 'package:practice_flutter/app/modules/circular_animation/widgets/pulsing_circle_animation.dart';
 import '../../models/circular_animation/circular_animation_item.dart';
+import 'widgets/circular_revolving_animation.dart';
 
 class CircularAnimationView extends StatelessWidget {
   const CircularAnimationView({super.key});
@@ -12,6 +13,13 @@ class CircularAnimationView extends StatelessWidget {
       title: AppStrings.smoothCircleAnimationTitle.translate(),
       description: AppStrings.smoothCircleAnimationDescription.translate(),
       animationWidget: const PulsingCircleAnimation(),
+    ),
+    CircularAnimationItem(
+      title: AppStrings.circularRevolvingAnimationTitle.translate(),
+      description: AppStrings.circularRevolvingAnimationDescription.translate(),
+      animationWidget: CircularRevolvingAnimation(
+        items: percyJacksonOlympiansBookItems,
+      ),
     ),
   ];
 
@@ -85,7 +93,6 @@ class CircularAnimationView extends StatelessWidget {
                           color: secondaryTextColor,
                         ),
                       ),
-                      const SizedBox(height: AppSpacing.spacing24),
                       Expanded(child: Center(child: item.animationWidget)),
                     ],
                   ),

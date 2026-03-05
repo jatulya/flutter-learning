@@ -22,6 +22,11 @@ class AppTextStyles {
     color: AppColors.green90,
   );
 
+  static const TextStyle title10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w600,
+  );
+
   // Normal weight styles
   static const TextStyle normal36 = TextStyle(
     fontSize: 36,
