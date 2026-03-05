@@ -113,3 +113,26 @@ List<CardItem> get iconCardItems => [
     description: "Remove items permanently from the app",
   ),
 ];
+
+List<CardItem> get percyJacksonOlympiansBookItems => [
+  const CardItem(
+    title: "The Lightning Thief",
+    description: "Percy is accused of stealing Zeus's lightning bolt and is sent to Camp Half-Blood to be kept safe.",
+  ),
+  const CardItem(
+    title: "The Sea of Monsters",
+    description: "Percy and his friends go on a quest to find the Golden Fleece to save Grover from the monster of the sea.",
+  ),
+  const CardItem(
+    title: "The Titans Curse",
+    description: "Percy forced his way to the quest to find Goddess Artemis and his friend Annabeth.",
+  ),
+  const CardItem(
+    title: "The Battle of the Labyrinth",
+    description: "The trio has to navigate the labyrinth to save the camp half-blood.",
+  ),
+  const CardItem(
+    title: "The Last Olympian",
+    description: "It's the Olympians v/s Titans final battle.",
+  ),
+];
