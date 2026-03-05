@@ -56,3 +56,63 @@ void flip() {
   if (_controller.isAnimating) return;
   _controller.forward(from: 0);
 }
+
+## Circular Revolving Animation - Positioning Logic
+
+### Container Setup
+
+The animation uses a `SizedBox` to define the total space needed:
+
+```dart
+totalSize = radius * 2 + itemSize * 2
+center = totalSize / 2
+```
+
+**Example:** With `radius = 150` and `itemSize = 80`:
+- `totalSize = 150 * 2 + 80 * 2 = 460`
+- `center = 460 / 2 = 230`
+
+### Circular Path Positioning
+
+The circular path (border) needs to be centered within the container:
+
+```dart
+// Circle dimensions
+circleWidth = radius * 2
+circleHeight = radius * 2
+
+// To center the circle in the container:
+leftPosition = (totalSize - circleWidth) / 2
+             = (radius * 2 + itemSize * 2 - radius * 2) / 2
+             = itemSize
+
+topPosition = itemSize  // Same calculation for vertical position
+```
+
+**Result:** The circle is positioned at `(itemSize, itemSize)`, which centers it perfectly in the container.
+
+### Item Positioning
+
+Items are positioned so their **centers** lie on the circular path:
+
+```dart
+// position.dx and position.dy are offsets from the circle center
+// Circle center is at (center, center) = (230, 230)
+
+itemCenterX = center + position.dx
+itemCenterY = center + position.dy
+
+// Positioned widget uses top-left corner, so we adjust:
+left = itemCenterX - itemSize / 2
+top = itemCenterY - itemSize / 2
+```
+
+**Key Points:**
+- Items' **centers** coincide with the circular path
+- Half of each item extends outside the circle (by `itemSize / 2`)
+- Each item's position is calculated using:
+  - **Base angle:** `(2π * index) / itemCount` - evenly spaces items
+  - **Animation angle:** `baseAngle + (controller.value * 2π)` - adds rotation
+  - **Trigonometric calculation:** `x = radius * sin(angle)`, `y = -radius * cos(angle)` 
+
+

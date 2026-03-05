@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:practice_flutter/app/common/constants/theme/app_colors.dart';
+import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/models/scroll_section/card_item.dart';
 
 class CircularRevolvingAnimation extends StatefulWidget {
@@ -81,11 +82,9 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
   @override
   Widget build(BuildContext context) {
     final itemCount = widget.items.length;
-    final baseItemSize = 60.0;
     final itemSize = 80.0;
-    final totalSize = radius * 2 + baseItemSize * 2;
-    final centerX = totalSize / 2;
-    final centerY = totalSize / 2;
+    final totalSize = radius * 2 + itemSize * 2;
+    final center = totalSize / 2;
 
     return SizedBox(
       width: totalSize,
@@ -94,12 +93,10 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
         animation: _controller,
         builder: (context, child) {
           return Stack(
-            alignment: Alignment.center,
             children: [
-              // Circular path - centered
               Positioned(
-                left: baseItemSize,
-                top: baseItemSize,
+                left: itemSize,
+                top: itemSize,
                 child: Container(
                   width: radius * 2,
                   height: radius * 2,
@@ -126,11 +123,9 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
                 // Create color with varying alpha
                 final color = AppColors.green50.withValues(alpha: alpha);
 
-                // Position item center at the calculated position
-                // The center of the circle is at (centerX, centerY)
                 return Positioned(
-                  left: centerX + position.dx - itemSize / 2,
-                  top: centerY + position.dy - itemSize / 2,
+                  left: center + position.dx - itemSize / 2,
+                  top: center + position.dy - itemSize / 2,
                   child: Transform.scale(
                     scale: scale,
                     child: Container(
@@ -155,10 +150,8 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
                             textAlign: TextAlign.center,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 10, // Scale text with item
-                              fontWeight: FontWeight.w600,
+                            style: AppTextStyles.title10.copyWith(
+                              color: AppColors.green10,
                             ),
                           ),
                         ),
@@ -174,3 +167,5 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
     );
   }
 }
+
+
