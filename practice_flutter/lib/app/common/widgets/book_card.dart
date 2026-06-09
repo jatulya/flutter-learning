@@ -19,7 +19,7 @@ class BookCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.12),
+            color: AppColors.dark.withValues(alpha: 0.12),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -33,9 +33,11 @@ class BookCard extends StatelessWidget {
             flex: 3,
             child: NetworkImageWidget(
               imageUrl: item.imageUrl,
-              placeholderBackgroundColor: Colors.black.withValues(alpha: 0.15),
+              placeholderBackgroundColor: AppColors.dark.withValues(
+                alpha: 0.15,
+              ),
               placeholderIcon: Icons.menu_book,
-              placeholderIconColor: Colors.white.withValues(alpha: 0.5),
+              placeholderIconColor: AppColors.light.withValues(alpha: 0.5),
             ),
           ),
           Expanded(
@@ -52,7 +54,7 @@ class BookCard extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
-                      color: Colors.white,
+                      color: AppColors.light,
                     ),
                   ),
                   const SizedBox(height: AppSpacing.spacing4),
@@ -63,7 +65,7 @@ class BookCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
-                      color: Colors.white.withValues(alpha: 0.85),
+                      color: AppColors.light.withValues(alpha: 0.85),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.spacing8),
@@ -74,7 +76,7 @@ class BookCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.white.withValues(alpha: 0.75),
+                        color: AppColors.light.withValues(alpha: 0.75),
                         height: 1.4,
                       ),
                     ),

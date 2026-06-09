@@ -31,12 +31,14 @@ This project demonstrates the following animations and UI patterns:
 The page flip animation uses a two-widget architecture:
 
 #### 1. **`PageFlipBuilder`** (StatefulWidget)
+
 - Manages the `AnimationController` lifecycle
 - Tracks which side (front/back) is currently visible using `_showFrontSide` boolean
 - Provides a public `flip()` method to trigger the animation
 - Uses `WidgetBuilder` parameters instead of direct widgets for performance
 
 **Key Code:**
+
 ```dart
 void flip() {
   if (_showFrontSide) {
@@ -48,12 +50,14 @@ void flip() {
 ```
 
 #### 2. **`AnimatedPageFlipBuilder`** (StatelessWidget)
+
 - Receives the animation value from the controller
 - Determines which side to render based on animation progress (first half = front, second half = back)
 - Applies 3D rotation transform using `Matrix4.rotationY`
 - Calculates tilt effect for realistic perspective
 
 **Key Code:**
+
 ```dart
 final isAnimationFirstHalf = animation.value.abs() < 0.5;
 final rotationAngle = isAnimationFirstHalf
@@ -64,6 +68,7 @@ final rotationAngle = isAnimationFirstHalf
 ### Why `WidgetBuilder`?
 
 At any given moment, **only one side of the page (front or back)** is visible. By passing builders rather than full widget trees, we:
+
 - Avoid building unnecessary widgets
 - Improve rendering performance
 - Allow the flip animation to dynamically decide which page to display
@@ -89,6 +94,7 @@ The sliver practice page demonstrates a complex scrollable layout with:
 3. **Vertical Scroll Section**: `SliverList` with `SliverChildBuilderDelegate` for efficient lazy loading
 
 **Key Benefits:**
+
 - Efficient memory usage with lazy loading
 - Smooth scrolling performance
 - Flexible layout composition
@@ -113,30 +119,35 @@ The sliver practice page demonstrates a complex scrollable layout with:
 The fade transition demo consists of two main parts:
 
 #### 1. **Title Animation** (`fade_transition_demo.dart`)
+
 - Fades in from opacity 0 to 1
 - Slides down from top (Offset(0, -1) to Offset.zero)
 - Uses `CurvedAnimation` with `Curves.easeIn` for smooth motion
 - Triggers automatically when page loads
 
 **Key Code:**
+
 ```dart
 _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0)
     .animate(CurvedAnimation(parent: _animationController, curve: Curves.easeIn));
 ```
 
 #### 2. **Sliding Cards** (`sliding_cards_list.dart` & `sliding_card.dart`)
+
 - Cards slide in from the right when first visible
 - Each card has a staggered delay based on its index
 - Uses `BlocProvider` and `SlidingCardsCubit` to track which cards have animated
 - Prevents re-animation when scrolling back up
 
 **Key Features:**
+
 - **State Management**: `SlidingCardsCubit` maintains a `Set<int>` of animated card indices
 - **One-time Animation**: Cards animate only once using `hasAnimated(index)` check
 - **Staggered Delay**: `Duration(milliseconds: index * 100)` creates cascading effect
 - **Performance**: Uses `ListView.builder` for efficient rendering
 
 **Key Code:**
+
 ```dart
 void markCardAsAnimated(int index) {
   if (!state.hasAnimated(index)) {
@@ -166,27 +177,31 @@ The pulsing circle animation creates a continuous ripple effect:
 #### **Pulsing Circle Animation** (`pulsing_circle_animation.dart`)
 
 **Core Mechanism:**
+
 1. **Spawn Controller**: Manages when new circles are created (every 1/5 of animation duration)
 2. **Circle Controllers**: Each circle has its own `AnimationController` for independent growth
 3. **Dynamic Color**: Color interpolates from dark (center) to light (outer) based on current radius
 4. **Continuous Effect**: New circles spawn before previous ones complete, maintaining visible concentric circles
 
 **Key Features:**
+
 - **Dark Origin**: Circles start dark at center (size 0) and grow outward
 - **Color Adaptation**: As circle grows, color matches the shade at that radius position
 - **Continuous Spawning**: Multiple circles visible simultaneously for ripple effect
 - **Automatic Cleanup**: Circles are removed and controllers disposed when animation completes
 
 **Key Code:**
+
 ```dart
 Color _getColorForRadius(double radiusProgress) {
-  final darkCenter = Color.lerp(baseColor, Colors.black, 0.3)!;
-  final lightOuter = Color.lerp(baseColor, Colors.white, 0.9)!;
+  final darkCenter = Color.lerp(baseColor, AppColors.dark, 0.3)!;
+  final lightOuter = Color.lerp(baseColor, AppColors.light, 0.9)!;
   return Color.lerp(darkCenter, lightOuter, radiusProgress)!;
 }
 ```
 
 **Animation Flow:**
+
 1. Initial circle spawns immediately
 2. Spawn controller triggers new circle creation at intervals
 3. Each circle animates from size 0 to full size
@@ -199,6 +214,7 @@ Color _getColorForRadius(double radiusProgress) {
 ## Common Patterns
 
 ### Animation Controller Setup
+
 ```dart
 _controller = AnimationController(
   duration: const Duration(milliseconds: 800),
@@ -207,6 +223,7 @@ _controller = AnimationController(
 ```
 
 ### Curved Animation
+
 ```dart
 final curvedAnimation = CurvedAnimation(
   parent: _controller,
@@ -215,12 +232,14 @@ final curvedAnimation = CurvedAnimation(
 ```
 
 ### Tween Animation
+
 ```dart
 final animation = Tween<double>(begin: 0.0, end: 1.0)
     .animate(curvedAnimation);
 ```
 
 ### AnimatedBuilder Pattern
+
 ```dart
 AnimatedBuilder(
   animation: _controller,
@@ -232,7 +251,6 @@ AnimatedBuilder(
   },
 )
 ```
-
 
 ## Circular Revolving Animation - Positioning Logic
 
@@ -246,6 +264,7 @@ center = totalSize / 2
 ```
 
 **Example:** With `radius = 150` and `itemSize = 80`:
+
 - `totalSize = 150 * 2 + 80 * 2 = 460`
 - `center = 460 / 2 = 230`
 
@@ -285,13 +304,13 @@ top = itemCenterY - itemSize / 2
 ```
 
 **Key Points:**
+
 - Items' **centers** coincide with the circular path
 - Half of each item extends outside the circle (by `itemSize / 2`)
 - Each item's position is calculated using:
   - **Base angle:** `(2π * index) / itemCount` - evenly spaces items
   - **Animation angle:** `baseAngle + (controller.value * 2π)` - adds rotation
-  - **Trigonometric calculation:** `x = radius * sin(angle)`, `y = -radius * cos(angle)` 
-
+  - **Trigonometric calculation:** `x = radius * sin(angle)`, `y = -radius * cos(angle)`
 
 ---
 

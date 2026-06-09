@@ -87,13 +87,13 @@ class _PulsingCircleAnimationState extends State<PulsingCircleAnimation>
 
     final darkCenter = Color.lerp(
       baseColor,
-      Colors.black,
+      AppColors.dark,
       0.3, // Dark center
     )!;
 
     final lightOuter = Color.lerp(
       baseColor,
-      Colors.white,
+      AppColors.light,
       0.9, // Very light outer
     )!;
 

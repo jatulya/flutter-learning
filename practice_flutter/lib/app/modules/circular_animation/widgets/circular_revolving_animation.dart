@@ -135,7 +135,7 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
                         color: color,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.2),
+                            color: AppColors.dark.withValues(alpha: 0.2),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -166,5 +166,3 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
     );
   }
 }
-
-
