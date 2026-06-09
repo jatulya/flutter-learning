@@ -31,13 +31,12 @@ class BookCard extends StatelessWidget {
         children: [
           Expanded(
             flex: 3,
-            child: item.imageUrl != null
-                ? Image.network(
-                    item.imageUrl!,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _buildImagePlaceholder(),
-                  )
-                : _buildImagePlaceholder(),
+            child: NetworkImageWidget(
+              imageUrl: item.imageUrl,
+              placeholderBackgroundColor: Colors.black.withValues(alpha: 0.15),
+              placeholderIcon: Icons.menu_book,
+              placeholderIconColor: Colors.white.withValues(alpha: 0.5),
+            ),
           ),
           Expanded(
             flex: 2,
@@ -85,19 +84,6 @@ class BookCard extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildImagePlaceholder() {
-    return Container(
-      color: Colors.black.withValues(alpha: 0.15),
-      child: Center(
-        child: Icon(
-          Icons.menu_book,
-          size: 48,
-          color: Colors.white.withValues(alpha: 0.5),
-        ),
       ),
     );
   }

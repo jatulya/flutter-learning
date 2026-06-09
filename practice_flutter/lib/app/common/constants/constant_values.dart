@@ -92,7 +92,7 @@ List<CardItem> get iconCardItems => [
     title: "Notifications",
     description: "View and manage your app alerts",
   ),
-    const CardItem(
+  const CardItem(
     icon: Icons.person,
     title: "Profile",
     description: "Access your personal account information",
@@ -127,7 +127,7 @@ List<BookItem> get bookItems => [
         'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&auto=format&fit=crop&q=60',
     backgroundColor: Color(0xFF2E5A88),
     description:
-        'Percy discovers he is a demigod and must retrieve Zeus\'s stolen lightning bolt before a war breaks out among the gods.',
+        'Percy discovers he is a demigod and must retrieve Zeus\'s stolen lightning bolt before a war breaks out among the gods. This is the first book in the Percy Jackson and the Olympians series and a great way to introduce children to Greek mythology.',
   ),
   const BookItem(
     title: 'The Sea of Monsters',
@@ -136,7 +136,7 @@ List<BookItem> get bookItems => [
         'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&auto=format&fit=crop&q=60',
     backgroundColor: Color(0xFF1B6B5A),
     description:
-        'Percy and his friends sail into the Sea of Monsters to find the Golden Fleece and save their camp from destruction.',
+        'Percy and his friends sail into the Sea of Monsters to find the Golden Fleece and save their camp from destruction. ',
   ),
   const BookItem(
     title: 'The Titans Curse',
