@@ -18,4 +18,5 @@ class AppStrings {
       "circularRevolvingAnimationTitle";
   static const String circularRevolvingAnimationDescription =
       "circularRevolvingAnimationDescription";
+  static const String carouselSliderTitle = "carouselSliderTitle";
 }

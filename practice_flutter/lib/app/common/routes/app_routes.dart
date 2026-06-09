@@ -4,4 +4,5 @@ class AppRoutes {
   static const String sliverPractice = "/sliver-practice";
   static const String fadeTransition = "/fade-transition";
   static const String smoothCircleAnimation = "/smooth-circle-animation";
+  static const String carouselSlider = "/carousel-slider";
 }

@@ -1,11 +1,10 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:practice_flutter/app/common/constants/theme/app_colors.dart';
 import 'package:practice_flutter/app/common/exports.dart';
-import 'package:practice_flutter/app/models/scroll_section/card_item.dart';
+import 'package:practice_flutter/app/models/book/book_item.dart';
 
 class CircularRevolvingAnimation extends StatefulWidget {
-  final List<CardItem> items;
+  final List<BookItem> items;
 
   const CircularRevolvingAnimation({super.key, required this.items});
 
@@ -146,7 +145,7 @@ class _CircularRevolvingAnimationState extends State<CircularRevolvingAnimation>
                         padding: const EdgeInsets.all(8),
                         child: Center(
                           child: Text(
-                            widget.items[index].title ?? '',
+                            widget.items[index].title,
                             textAlign: TextAlign.center,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,

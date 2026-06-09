@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice_flutter/app/common/exports.dart';
 import 'package:practice_flutter/app/common/extensions.dart';
+import 'package:practice_flutter/app/models/book/book_item.dart';
 import 'package:practice_flutter/app/models/scroll_section/card_item.dart';
 
 class ButtonItem {
@@ -26,6 +27,10 @@ List<ButtonItem> get homeButtons => [
   ButtonItem(
     buttonName: AppStrings.circularAnimationsTitle.translate(),
     buttonNavigation: AppRoutes.smoothCircleAnimation,
+  ),
+  ButtonItem(
+    buttonName: AppStrings.carouselSliderTitle.translate(),
+    buttonNavigation: AppRoutes.carouselSlider,
   ),
 ];
 
@@ -114,25 +119,48 @@ List<CardItem> get iconCardItems => [
   ),
 ];
 
-List<CardItem> get percyJacksonOlympiansBookItems => [
-  const CardItem(
-    title: "The Lightning Thief",
-    description: "Percy is accused of stealing Zeus's lightning bolt and is sent to Camp Half-Blood to be kept safe.",
+List<BookItem> get bookItems => [
+  const BookItem(
+    title: 'The Lightning Thief',
+    author: 'Rick Riordan',
+    imageUrl:
+        'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&auto=format&fit=crop&q=60',
+    backgroundColor: Color(0xFF2E5A88),
+    description:
+        'Percy discovers he is a demigod and must retrieve Zeus\'s stolen lightning bolt before a war breaks out among the gods.',
   ),
-  const CardItem(
-    title: "The Sea of Monsters",
-    description: "Percy and his friends go on a quest to find the Golden Fleece to save Grover from the monster of the sea.",
+  const BookItem(
+    title: 'The Sea of Monsters',
+    author: 'Rick Riordan',
+    imageUrl:
+        'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&auto=format&fit=crop&q=60',
+    backgroundColor: Color(0xFF1B6B5A),
+    description:
+        'Percy and his friends sail into the Sea of Monsters to find the Golden Fleece and save their camp from destruction.',
   ),
-  const CardItem(
-    title: "The Titans Curse",
-    description: "Percy forced his way to the quest to find Goddess Artemis and his friend Annabeth.",
+  const BookItem(
+    title: 'The Titans Curse',
+    author: 'Rick Riordan',
+    backgroundColor: Color(0xFF5C3D6E),
+    description:
+        'Percy joins a quest to rescue the goddess Artemis and his friend Annabeth, who have both gone missing.',
   ),
-  const CardItem(
-    title: "The Battle of the Labyrinth",
-    description: "The trio has to navigate the labyrinth to save the camp half-blood.",
+  const BookItem(
+    title: 'The Battle of the Labyrinth',
+    author: 'Rick Riordan',
+    imageUrl:
+        'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&auto=format&fit=crop&q=60',
+    backgroundColor: Color(0xFF8B4513),
+    description:
+        'The heroes navigate an ever-shifting labyrinth to stop Kronos\'s army from invading Camp Half-Blood.',
   ),
-  const CardItem(
-    title: "The Last Olympian",
-    description: "It's the Olympians v/s Titans final battle.",
+  const BookItem(
+    title: 'The Last Olympian',
+    author: 'Rick Riordan',
+    imageUrl:
+        'https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=400&auto=format&fit=crop&q=60',
+    backgroundColor: Color(0xFF4A3728),
+    description:
+        'Percy leads the final stand to defend Mount Olympus as the Titans launch their assault on New York City.',
   ),
 ];

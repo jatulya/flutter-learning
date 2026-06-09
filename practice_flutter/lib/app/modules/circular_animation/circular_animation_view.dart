@@ -18,7 +18,7 @@ class CircularAnimationView extends StatelessWidget {
       title: AppStrings.circularRevolvingAnimationTitle.translate(),
       description: AppStrings.circularRevolvingAnimationDescription.translate(),
       animationWidget: CircularRevolvingAnimation(
-        items: percyJacksonOlympiansBookItems,
+        items: bookItems,
       ),
     ),
   ];
