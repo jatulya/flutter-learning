@@ -12,6 +12,17 @@ class StringValues {
       AppStrings.fadeTransitionTitle: "Fade Transition Demo",
       AppStrings.fadeTransitionButtonTitle: "Fade Transition",
       AppStrings.slidingCardsHeading: "Sliding Cards",
+      AppStrings.circularAnimationsTitle: "Circular Animations",
+      AppStrings.circularAnimationsDescription:
+          "This is a list of circular animations.",
+      AppStrings.smoothCircleAnimationTitle: "Smooth Circle Animation",
+      AppStrings.smoothCircleAnimationDescription:
+          "A circle with distinct color shades creating concentric rings.",
+      AppStrings.circularRevolvingAnimationTitle:
+          "Circular Revolving Animation",
+      AppStrings.circularRevolvingAnimationDescription:
+          "Items from Percy Jackson Olympians series revolve around a vertical circle. The item at the top center is 1.5x larger and brighter.",
+      AppStrings.carouselSliderTitle: "Carousel Slider",
     },
   };
 }

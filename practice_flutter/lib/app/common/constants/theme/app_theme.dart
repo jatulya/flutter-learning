@@ -21,7 +21,7 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.green50,
-        foregroundColor: Colors.white,
+        foregroundColor: AppColors.light,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -32,7 +32,7 @@ class AppTheme {
 
   // ---------- DARK THEME ----------
   static ThemeData darkTheme = ThemeData(
-scaffoldBackgroundColor: AppColors.green100,
+    scaffoldBackgroundColor: AppColors.green100,
     primaryColor: AppColors.green50,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.green50,
@@ -49,7 +49,7 @@ scaffoldBackgroundColor: AppColors.green100,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.green50,
-        foregroundColor: Colors.black,
+        foregroundColor: AppColors.dark,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),

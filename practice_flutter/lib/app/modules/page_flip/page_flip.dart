@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/app/common/constants/theme/app_colors.dart';
 import 'package:practice_flutter/app/modules/page_flip/widgets/dark_page.dart';
 import 'package:practice_flutter/app/modules/page_flip/widgets/light_page.dart';
 import 'package:practice_flutter/app/modules/page_flip/widgets/page_flip_builder.dart';
@@ -11,15 +12,13 @@ class PageFlip extends StatelessWidget {
     final pageFlipKey = GlobalKey<PageFlipBuilderState>();
 
     return Scaffold(
-      backgroundColor: Colors.black, // Prevent flicker during animation
+      backgroundColor: AppColors.dark, // Prevent flicker during animation
       body: PageFlipBuilder(
         key: pageFlipKey,
-        frontBuilder: (_) => LightPage(
-          onFlip: () => pageFlipKey.currentState?.flip(),
-        ),
-        backBuilder: (_) => DarkPage(
-          onFlip: () => pageFlipKey.currentState?.flip(),
-        ),
+        frontBuilder: (_) =>
+            LightPage(onFlip: () => pageFlipKey.currentState?.flip()),
+        backBuilder: (_) =>
+            DarkPage(onFlip: () => pageFlipKey.currentState?.flip()),
       ),
     );
   }

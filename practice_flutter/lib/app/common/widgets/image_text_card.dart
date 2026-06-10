@@ -21,9 +21,10 @@ class ImageTextCard extends StatelessWidget {
         children: [
           // Image section
           Expanded(
-            child: item.imageUrl != null
-                ? Image.network(item.imageUrl ?? '', fit: BoxFit.cover)
-                : Container(color: AppColors.grey),
+            child: NetworkImageWidget(
+              imageUrl: item.imageUrl,
+              placeholderBackgroundColor: AppColors.grey,
+            ),
           ),
 
           // Text section with gradient background
@@ -42,7 +43,7 @@ class ImageTextCard extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                color: Colors.white,
+                color: AppColors.light,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),

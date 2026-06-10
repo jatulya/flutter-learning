@@ -9,6 +9,8 @@ export 'routes/app_router.dart';
 export 'routes/app_routes.dart';
 
 //common widgets
+export 'widgets/book_card.dart';
 export 'widgets/custom_app_bar.dart';
 export 'widgets/image_text_card.dart';
+export 'widgets/network_image_widget.dart';
 export 'widgets/pushable_button.dart';

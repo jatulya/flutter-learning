@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:practice_flutter/app/common/routes/app_routes.dart';
+import 'package:practice_flutter/app/modules/circular_animation/circular_animation_view.dart';
 import 'package:practice_flutter/app/modules/homescreen.dart';
 import 'package:practice_flutter/app/modules/page_flip/page_flip.dart';
 import 'package:practice_flutter/app/modules/slivers/sliver_practice_page.dart';
+import 'package:practice_flutter/app/modules/carousel_slider/carousel_slider_view.dart';
 import 'package:practice_flutter/app/modules/fade_transition/fade_transition_demo.dart';
 
 class AppRouter {
@@ -16,6 +18,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SliverPracticePage());
       case AppRoutes.fadeTransition:
         return MaterialPageRoute(builder: (_) => const FadeTransitionDemo());
+      case AppRoutes.smoothCircleAnimation:
+        return MaterialPageRoute(builder: (_) => const CircularAnimationView());
+      case AppRoutes.carouselSlider:
+        return MaterialPageRoute(builder: (_) => const CarouselSliderView());
       default:
         return MaterialPageRoute(
           builder: (_) =>
